@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Review Sentiment Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        h1 { color: #333; }
+        textarea { width: 100%; height: 120px; padding: 10px; font-size: 14px; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+        .result { margin-top: 20px; padding: 15px; background: #fff; border: 1px solid #ddd; }
+        .positive { color: green; font-weight: bold; }
+        .negative { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Amazon Review Sentiment Analysis</h1>
+    <form method="POST">
+        <textarea name="review" placeholder="Type or paste a review...">{{ review }}</textarea><br><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Sentiment: 
+        <span class="{{ prediction }}">{{ prediction|capitalize }}</span>
+    </div>
+    {% endif %}
+</body>
+</html>

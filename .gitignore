@@ -1,0 +1,5 @@
+Reviews.csv
+artifacts/
+*.pkl
+__pycache__/
+*.pyc
